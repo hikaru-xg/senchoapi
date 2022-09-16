@@ -7,8 +7,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var samples = require('./routes/samples');
+var hike = require('./routes/hike');
 
 var app = express();
+app.get('/hikes', hike.index);
+app.get('/add_hike', hike.add_hike);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
